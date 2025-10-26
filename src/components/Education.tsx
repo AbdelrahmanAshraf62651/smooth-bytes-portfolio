@@ -51,7 +51,7 @@ const Education = () => {
               transition={{ delay: 0.2 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
             >
-              My <span className="gradient-primary bg-clip-text text-transparent">Education</span>
+              My <span className="gradient-text">Education</span>
             </motion.h2>
             <motion.div
               initial={{ scaleX: 0 }}

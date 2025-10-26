@@ -72,7 +72,7 @@ const Experience = () => {
               transition={{ delay: 0.2 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
             >
-              Work <span className="gradient-primary bg-clip-text text-transparent">Experience</span>
+              Work <span className="gradient-text">Experience</span>
             </motion.h2>
             <motion.div
               initial={{ scaleX: 0 }}

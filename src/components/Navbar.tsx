@@ -47,7 +47,7 @@ const Navbar = () => {
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-xl md:text-2xl font-bold gradient-primary bg-clip-text text-transparent cursor-pointer"
+            className="text-xl md:text-2xl font-bold gradient-text cursor-pointer"
             onClick={() => scrollToSection('#hero')}
           >
             Portfolio

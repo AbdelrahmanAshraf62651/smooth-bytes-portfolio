@@ -61,7 +61,7 @@ const Contact = () => {
               transition={{ delay: 0.2 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
             >
-              Get In <span className="gradient-primary bg-clip-text text-transparent">Touch</span>
+              Get In <span className="gradient-text">Touch</span>
             </motion.h2>
             <motion.div
               initial={{ scaleX: 0 }}

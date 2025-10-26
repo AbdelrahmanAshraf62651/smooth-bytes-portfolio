@@ -75,7 +75,7 @@ const Projects = () => {
               transition={{ delay: 0.2 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
             >
-              Featured <span className="gradient-primary bg-clip-text text-transparent">Projects</span>
+              Featured <span className="gradient-text">Projects</span>
             </motion.h2>
             <motion.div
               initial={{ scaleX: 0 }}

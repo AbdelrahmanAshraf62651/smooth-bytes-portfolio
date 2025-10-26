@@ -31,7 +31,7 @@ const About = () => {
               transition={{ delay: 0.2 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
             >
-              About <span className="gradient-primary bg-clip-text text-transparent">Me</span>
+              About <span className="gradient-text">Me</span>
             </motion.h2>
             <motion.div
               initial={{ scaleX: 0 }}
