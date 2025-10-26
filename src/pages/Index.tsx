@@ -13,13 +13,13 @@ const Index = () => {
     <SmoothScroll>
       <div className="relative">
         <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <Education />
-          <Experience />
-          <Projects />
-          <Contact />
+        <main className="scroll-container">
+          <div className="scroll-section"><Hero /></div>
+          <div className="scroll-section"><About /></div>
+          <div className="scroll-section"><Education /></div>
+          <div className="scroll-section"><Experience /></div>
+          <div className="scroll-section"><Projects /></div>
+          <div className="scroll-section"><Contact /></div>
         </main>
         <ScrollToTop />
       </div>

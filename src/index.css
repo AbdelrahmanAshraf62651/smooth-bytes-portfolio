@@ -139,4 +139,15 @@ All colors MUST be HSL.
     background-clip: text;
     display: inline-block;
   }
+
+  .scroll-container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+
+  .scroll-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
 }
