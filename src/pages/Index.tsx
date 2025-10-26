@@ -1,13 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import SmoothScroll from '@/components/SmoothScroll';
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import Education from '@/components/Education';
+import Experience from '@/components/Experience';
+import Projects from '@/components/Projects';
+import Contact from '@/components/Contact';
+import ScrollToTop from '@/components/ScrollToTop';
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <SmoothScroll>
+      <div className="relative">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Education />
+          <Experience />
+          <Projects />
+          <Contact />
+        </main>
+        <ScrollToTop />
       </div>
-    </div>
+    </SmoothScroll>
   );
 };
 
