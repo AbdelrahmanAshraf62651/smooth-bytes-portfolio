@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Code2, Database, Palette, Zap } from 'lucide-react';
-import Image from '../../assets/image.jpeg';
+import profileImage from '../../assets/image.jpeg';
 
 const skills = [
   {
@@ -78,7 +78,7 @@ const About = () => {
               <div className="relative group">
                 <div className="absolute inset-0 gradient-primary rounded-2xl blur-2xl opacity-30 group-hover:opacity-50 transition-smooth" />
                 <img
-                  src={Image}
+                  src={profileImage}
                   alt="Profile"
                   className="relative rounded-2xl shadow-2xl w-full aspect-square object-cover transform group-hover:scale-[1.02] transition-smooth"
                 />

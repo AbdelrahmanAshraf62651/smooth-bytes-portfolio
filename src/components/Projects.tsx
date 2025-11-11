@@ -3,13 +3,19 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import { Button } from './ui/button';
+import movieGoImg from '../../assets/projects/moviego.png';
+import flavourFindsImg from '../../assets/projects/flavourfinds.png';
+import spaceXImg from '../../assets/projects/spacex.png';
+import smartCityImg from '../../assets/projects/smartcity.jpg';
+import portfolioImg from '../../assets/projects/portfolio.png';
+import weatherAppImg from '../../assets/projects/weather.png';
 
 const projects = [
   {
     title: 'Movie Go',
     description:
       'MovieGo is a React-based web app that lets you discover, explore, and save your favorite movies. Powered by The Movie Database (TMDB) API.',
-    image: '../../../assets/projects/moviego.png',
+    image: movieGoImg,
     tech: ['React', 'Tailwind'],
     github: 'https://github.com/AbdelrahmanAshraf62651/movie-go',
     demo: 'https://abdelrahmanashraf62651.github.io/movie-go/',
@@ -18,7 +24,7 @@ const projects = [
     title: 'Flavor Finds',
     description:
       'A modern, responsive web application for discovering, organizing, and sharing delicious recipes.',
-    image: '../../../assets/projects/flavourfinds.png',
+    image: flavourFindsImg,
     tech: ['HTML5', 'CSS3', 'Bootstrap'],
     github: 'https://github.com/AbdelrahmanAshraf62651/FlavorFinds',
     demo: 'https://abdelrahmanashraf62651.github.io/FlavorFinds/',
@@ -27,7 +33,7 @@ const projects = [
     title: 'SpaceX',
     description:
       'A web application designed to manage and enhance workspace experiences for both users and administrators.',
-    image: '../../../assets/projects/spacex.png',
+    image: spaceXImg,
     tech: ['TypeScript', 'React', 'Bootstrap', 'Node.js'],
     github: 'https://github.com/AbdelrahmanAshraf62651/Workspace',
     demo: 'https://abdelrahmanashraf62651.github.io/Workspace/index.html',
@@ -36,7 +42,7 @@ const projects = [
     title: 'Smart City Platform',
     description:
       'Smart City, a unified JavaFX desktop application that reimagines how urban residents interact with city services.',
-    image: '../../../assets/projects/smartcity.jpg',
+    image: smartCityImg,
     tech: ['Java Spring', 'JavaFX', 'MongoDB'],
     demo: 'https://www.linkedin.com/posts/mohammademad2003_java-smartcity-javafx-activity-7331357990710575104-DSXK?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAElyBZkBqm8I8kG2VsySAlVAn0aNj6ex1yM',
   },
@@ -44,7 +50,7 @@ const projects = [
     title: 'Portfolio',
     description:
       'A sleek, animated personal portfolio built with Next.js and Tailwind CSS to showcase my projects and skills.',
-    image: '../../../assets/projects/portfolio.png',
+    image: portfolioImg,
     tech: ['Next.js', 'Tailwind', 'Framer motion', 'TypeScript'],
     github: 'https://github.com',
     demo: 'https://demo.com',
@@ -53,7 +59,7 @@ const projects = [
     title: 'Weather App',
     description:
       'A weather application that provides real-time forecasts, featuring location detection and city search functionality.',
-    image: '../../../assets/projects/weather.png',
+    image: weatherAppImg,
     tech: ['Bootstrap', 'JavaScript', 'Open Weather Map API'],
     github: 'https://github.com/AbdelrahmanAshraf62651/weatherApp',
     demo: 'https://abdelrahmanashraf62651.github.io/weatherApp/',
