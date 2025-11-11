@@ -2,20 +2,46 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Code2, Database, Palette, Zap } from 'lucide-react';
+import Image from '../../assets/image.jpeg';
 
 const skills = [
-  { name: 'Frontend Development', icon: Palette, items: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js'] },
-  { name: 'Backend Development', icon: Database, items: ['Node.js', 'Python', 'PostgreSQL', 'MongoDB'] },
-  { name: 'Tools & Technologies', icon: Code2, items: ['Git', 'Docker', 'AWS', 'CI/CD'] },
-  { name: 'Core Skills', icon: Zap, items: ['Problem Solving', 'Algorithms', 'System Design', 'Testing'] },
+  {
+    name: 'Frontend Development',
+    icon: Palette,
+    items: ['React', 'TypeScript', 'Tailwind CSS', 'Bootstrap'],
+  },
+  {
+    name: 'Programming Languages',
+    icon: Database,
+    items: ['JavaScript', 'Python', 'C++', 'Java'],
+  },
+  {
+    name: 'Tools & Technologies',
+    icon: Code2,
+    items: ['Git', 'Postman'],
+  },
+  {
+    name: 'Core Skills',
+    icon: Zap,
+    items: [
+      'Problem Solving',
+      'Data Structures',
+      'Algorithms',
+      'System Design',
+    ],
+  },
 ];
 
 const About = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="about" ref={ref} className="py-20 md:py-32 relative">
+    <section
+      id="about"
+      ref={ref}
+      className="py-20 md:py-32 relative bg-card/30"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -52,7 +78,7 @@ const About = () => {
               <div className="relative group">
                 <div className="absolute inset-0 gradient-primary rounded-2xl blur-2xl opacity-30 group-hover:opacity-50 transition-smooth" />
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop"
+                  src={Image}
                   alt="Profile"
                   className="relative rounded-2xl shadow-2xl w-full aspect-square object-cover transform group-hover:scale-[1.02] transition-smooth"
                 />
@@ -70,16 +96,18 @@ const About = () => {
                 Crafting Digital Experiences
               </h3>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-                I'm a passionate Software Engineering student with a keen interest in building
-                innovative solutions that make a difference. My journey in tech started with a
-                curiosity about how things work, and has evolved into a deep commitment to
+                I'm a passionate Software Engineering student with a keen
+                interest in building innovative solutions that make a
+                difference. My journey in tech started with a curiosity about
+                how things work, and has evolved into a deep commitment to
                 creating elegant, efficient software.
               </p>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-                With experience in full-stack development, I thrive on turning complex problems
-                into simple, beautiful, and intuitive designs. Whether it's building responsive
-                web applications or architecting scalable backend systems, I bring creativity
-                and technical expertise to every project.
+                With experience in full-stack development, I thrive on turning
+                complex problems into simple, beautiful, and intuitive designs.
+                Whether it's building responsive web applications or
+                architecting scalable backend systems, I bring creativity and
+                technical expertise to every project.
               </p>
             </motion.div>
           </div>
@@ -97,7 +125,6 @@ const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.6 + index * 0.1 }}
-                whileHover={{ y: -5, scale: 1.02 }}
                 className="glass-effect p-6 rounded-xl hover:shadow-primary transition-smooth group"
               >
                 <div className="flex items-center mb-4">
@@ -108,7 +135,10 @@ const About = () => {
                 <h4 className="font-semibold text-lg mb-3">{skill.name}</h4>
                 <ul className="space-y-2">
                   {skill.items.map((item) => (
-                    <li key={item} className="text-muted-foreground text-sm flex items-center">
+                    <li
+                      key={item}
+                      className="text-muted-foreground text-sm flex items-center"
+                    >
                       <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2" />
                       {item}
                     </li>

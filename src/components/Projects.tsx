@@ -6,61 +6,70 @@ import { Button } from './ui/button';
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    description: 'Full-stack e-commerce application with payment integration, inventory management, and admin dashboard.',
-    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop',
-    tech: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
+    title: 'Movie Go',
+    description:
+      'MovieGo is a React-based web app that lets you discover, explore, and save your favorite movies. Powered by The Movie Database (TMDB) API.',
+    image: '../../../assets/projects/moviego.png',
+    tech: ['React', 'Tailwind'],
+    github: 'https://github.com/AbdelrahmanAshraf62651/movie-go',
+    demo: 'https://abdelrahmanashraf62651.github.io/movie-go/',
+  },
+  {
+    title: 'Flavor Finds',
+    description:
+      'A modern, responsive web application for discovering, organizing, and sharing delicious recipes.',
+    image: '../../../assets/projects/flavourfinds.png',
+    tech: ['HTML5', 'CSS3', 'Bootstrap'],
+    github: 'https://github.com/AbdelrahmanAshraf62651/FlavorFinds',
+    demo: 'https://abdelrahmanashraf62651.github.io/FlavorFinds/',
+  },
+  {
+    title: 'SpaceX',
+    description:
+      'A web application designed to manage and enhance workspace experiences for both users and administrators.',
+    image: '../../../assets/projects/spacex.png',
+    tech: ['TypeScript', 'React', 'Bootstrap', 'Node.js'],
+    github: 'https://github.com/AbdelrahmanAshraf62651/Workspace',
+    demo: 'https://abdelrahmanashraf62651.github.io/Workspace/index.html',
+  },
+  {
+    title: 'Smart City Platform',
+    description:
+      'Smart City, a unified JavaFX desktop application that reimagines how urban residents interact with city services.',
+    image: '../../../assets/projects/smartcity.jpg',
+    tech: ['Java Spring', 'JavaFX', 'MongoDB'],
+    demo: 'https://www.linkedin.com/posts/mohammademad2003_java-smartcity-javafx-activity-7331357990710575104-DSXK?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAElyBZkBqm8I8kG2VsySAlVAn0aNj6ex1yM',
+  },
+  {
+    title: 'Portfolio',
+    description:
+      'A sleek, animated personal portfolio built with Next.js and Tailwind CSS to showcase my projects and skills.',
+    image: '../../../assets/projects/portfolio.png',
+    tech: ['Next.js', 'Tailwind', 'Framer motion', 'TypeScript'],
     github: 'https://github.com',
     demo: 'https://demo.com',
   },
   {
-    title: 'Task Management App',
-    description: 'Collaborative task management tool with real-time updates, team features, and analytics dashboard.',
-    image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop',
-    tech: ['React', 'Firebase', 'Tailwind CSS', 'TypeScript'],
-    github: 'https://github.com',
-    demo: 'https://demo.com',
-  },
-  {
-    title: 'Weather Dashboard',
-    description: 'Modern weather application with location-based forecasts, interactive maps, and detailed analytics.',
-    image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&h=600&fit=crop',
-    tech: ['React', 'Weather API', 'Charts.js', 'Tailwind'],
-    github: 'https://github.com',
-    demo: 'https://demo.com',
-  },
-  {
-    title: 'Social Media Clone',
-    description: 'Full-featured social media platform with posts, comments, likes, user profiles, and real-time chat.',
-    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
-    tech: ['Next.js', 'MongoDB', 'Socket.io', 'AWS S3'],
-    github: 'https://github.com',
-    demo: 'https://demo.com',
-  },
-  {
-    title: 'AI Code Assistant',
-    description: 'VS Code extension that provides intelligent code suggestions and documentation using OpenAI API.',
-    image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop',
-    tech: ['TypeScript', 'VS Code API', 'OpenAI', 'Node.js'],
-    github: 'https://github.com',
-    demo: 'https://demo.com',
-  },
-  {
-    title: 'Portfolio Builder',
-    description: 'No-code platform for creating beautiful portfolio websites with drag-and-drop interface.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
-    tech: ['React', 'DnD Kit', 'Express', 'MongoDB'],
-    github: 'https://github.com',
-    demo: 'https://demo.com',
+    title: 'Weather App',
+    description:
+      'A weather application that provides real-time forecasts, featuring location detection and city search functionality.',
+    image: '../../../assets/projects/weather.png',
+    tech: ['Bootstrap', 'JavaScript', 'Open Weather Map API'],
+    github: 'https://github.com/AbdelrahmanAshraf62651/weatherApp',
+    demo: 'https://abdelrahmanashraf62651.github.io/weatherApp/',
   },
 ];
 
 const Projects = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="projects" ref={ref} className="py-20 md:py-32 relative bg-card/30">
+    <section
+      id="projects"
+      ref={ref}
+      className="py-20 md:py-32 relative bg-card/30"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -93,7 +102,6 @@ const Projects = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.5 + index * 0.1 }}
-                whileHover={{ y: -10 }}
                 className="group relative overflow-hidden rounded-xl glass-effect hover:shadow-primary transition-smooth"
               >
                 {/* Project Image */}
@@ -104,30 +112,42 @@ const Projects = () => {
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-smooth duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60 group-hover:opacity-80 transition-smooth" />
-                  
+
                   {/* Overlay buttons */}
                   <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-smooth">
-                    <Button
-                      size="sm"
-                      asChild
-                      className="bg-primary hover:bg-primary/90"
-                    >
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
-                      </a>
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      asChild
-                      className="border-primary/50 hover:bg-primary/10"
-                    >
-                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Demo
-                      </a>
-                    </Button>
+                    {project.github && (
+                      <Button
+                        size="sm"
+                        asChild
+                        className="bg-primary hover:bg-primary/90"
+                      >
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Github className="w-4 h-4 mr-2" />
+                          Code
+                        </a>
+                      </Button>
+                    )}
+                    {project.demo && (
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        asChild
+                        className="border-primary/50 hover:bg-primary/10"
+                      >
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Demo
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </div>
 

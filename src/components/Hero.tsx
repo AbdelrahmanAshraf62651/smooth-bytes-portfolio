@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from './ui/button';
+import cv from '../../assets/cv.pdf';
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -18,10 +19,13 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Animated gradient background */}
       <div className="absolute inset-0 gradient-hero -z-10" />
-      
+
       {/* Floating particles effect */}
       <div className="absolute inset-0 overflow-hidden -z-10">
         {[...Array(20)].map((_, i) => (
@@ -39,7 +43,7 @@ const Hero = () => {
             transition={{
               duration: Math.random() * 10 + 10,
               repeat: Infinity,
-              repeatType: "reverse",
+              repeatType: 'reverse',
             }}
           />
         ))}
@@ -57,7 +61,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-primary text-lg md:text-xl font-medium"
+            className="text-lg pt-10 md:text-xl font-medium"
           >
             Hi, I'm
           </motion.p>
@@ -67,9 +71,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold"
           >
-            John Doe
+            Abdelrahman
           </motion.h1>
 
           {/* Title */}
@@ -77,9 +81,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-muted-foreground"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold"
           >
-            Software Engineering Student
+            Software Engineer
           </motion.h2>
 
           {/* Description */}
@@ -87,10 +91,10 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
+            className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto"
           >
-            Passionate about building scalable applications and solving complex problems
-            through clean, efficient code.
+            Passionate about building scalable applications and solving complex
+            problems through clean, efficient code.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -103,18 +107,40 @@ const Hero = () => {
             <Button
               size="lg"
               onClick={scrollToProjects}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-primary group"
+              className="gradient-primary text-primary-foreground shadow-primary hover:shadow-glow transform-gpu active:scale-95 transition duration-200 ease-in-out group"
+              aria-label="View my work"
             >
               View My Work
               <ArrowDown className="ml-2 h-4 w-4 group-hover:animate-bounce" />
             </Button>
+
             <Button
               size="lg"
               variant="outline"
               onClick={scrollToContact}
-              className="border-primary/50 hover:bg-primary/10"
+              className="border-white/20 bg-white/5 text-primary-foreground hover:bg-white/10 hover:text-primary transition-colors duration-200 shadow-sm flex items-center justify-center gap-2"
+              aria-label="Get in touch"
             >
-              Get In Touch
+              <Mail className="h-4 w-4" />
+              <span>Get In Touch</span>
+            </Button>
+
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white/20 bg-white/5 text-primary-foreground hover:bg-white/10 hover:text-primary transition-colors duration-200 shadow-sm"
+              aria-label="Download CV"
+              asChild
+            >
+              <a
+                href={cv}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2"
+              >
+                <ArrowDown className="h-4 w-4" />
+                <span>Download CV</span>
+              </a>
             </Button>
           </motion.div>
 
@@ -126,18 +152,32 @@ const Hero = () => {
             className="flex gap-4 justify-center pt-8"
           >
             {[
-              { Icon: Github, href: 'https://github.com', label: 'GitHub' },
-              { Icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-              { Icon: Mail, href: 'mailto:johndoe@example.com', label: 'Email' },
-            ].map(({ Icon, href, label }) => (
+              {
+                Icon: Github,
+                href: 'https://github.com/AbdelrahmanAshraf62651',
+                label: 'GitHub',
+                delay: '0s',
+              },
+              {
+                Icon: Linkedin,
+                href: 'https://www.linkedin.com/in/abdelrahman-ashraf-fathey/',
+                label: 'LinkedIn',
+                delay: '0.2s',
+              },
+              {
+                Icon: Mail,
+                href: 'mailto:abdelrahmanashraf6000@gmail.com',
+                label: 'Email',
+                delay: '0.4s',
+              },
+            ].map(({ Icon, href, label, delay }) => (
               <motion.a
                 key={label}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1, y: -3 }}
-                whileTap={{ scale: 0.95 }}
-                className="p-3 rounded-full glass-effect hover:shadow-glow transition-smooth"
+                className="p-3 rounded-full hover:shadow-glow animate-bounce transition-smooth"
+                style={{ animationDelay: delay }}
                 aria-label={label}
               >
                 <Icon className="w-5 h-5 md:w-6 md:h-6" />
@@ -146,26 +186,6 @@ const Hero = () => {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-primary/50 rounded-full flex items-start justify-center p-2"
-        >
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1.5 h-1.5 bg-primary rounded-full"
-          />
-        </motion.div>
-      </motion.div>
     </section>
   );
 };

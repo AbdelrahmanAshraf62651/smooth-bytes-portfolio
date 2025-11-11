@@ -5,37 +5,29 @@ import { GraduationCap, Calendar, MapPin } from 'lucide-react';
 
 const education = [
   {
-    degree: 'Bachelor of Science in Software Engineering',
-    institution: 'University of Technology',
-    location: 'San Francisco, CA',
-    period: '2021 - 2025',
-    description: 'Focused on software architecture, algorithms, and full-stack development. GPA: 3.8/4.0',
-    achievements: [
-      "Dean's List all semesters",
-      'Led university hackathon team to 1st place',
-      'Teaching Assistant for Data Structures course',
-    ],
+    degree: 'Bachelor of Computer Engineering',
+    institution: 'Helwan University',
+    location: 'Cairo',
+    period: '2023 - Present',
+    description:
+      'Focused on software architecture, algorithms, and full-stack development. Grade: 89%',
   },
   {
-    degree: 'High School Diploma',
-    institution: 'Tech High School',
-    location: 'San Francisco, CA',
-    period: '2017 - 2021',
-    description: 'Computer Science focus with honors. Advanced Placement courses in Calculus and Physics.',
-    achievements: [
-      'Valedictorian',
-      'National Honor Society Member',
-      'Science Fair Winner - Robotics Project',
-    ],
+    degree: 'MERN Stack Developer',
+    institution: 'Digital Egypt Pioneers Initiative (DEPI)',
+    location: 'Cairo',
+    period: '2025 - Present',
+    description:
+      'Comprehensive training in modern web development technologies including React, Node.js, MongoDB, and cloud deployment practices.',
   },
 ];
 
 const Education = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="education" ref={ref} className="py-20 md:py-32 relative bg-card/30">
+    <section id="education" ref={ref} className="py-20 md:py-32 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -95,19 +87,26 @@ const Education = () => {
                   </div>
 
                   {/* Content Card */}
-                  <div className={`w-full md:w-5/12 ml-20 md:ml-0 ${index % 2 === 0 ? 'md:mr-auto md:pr-12' : 'md:ml-auto md:pl-12'}`}>
-                    <motion.div
-                      whileHover={{ y: -5 }}
-                      className="glass-effect p-6 md:p-8 rounded-xl hover:shadow-primary transition-smooth group"
-                    >
+                  <div
+                    className={`w-full md:w-5/12 ml-20 md:ml-0 ${
+                      index % 2 === 0
+                        ? 'md:mr-auto md:pr-12'
+                        : 'md:ml-auto md:pl-12'
+                    }`}
+                  >
+                    <motion.div className="glass-effect p-6 md:p-8 rounded-xl hover:shadow-primary transition-smooth group">
                       <div className="flex items-start mb-4">
                         <div className="p-3 rounded-lg gradient-primary group-hover:shadow-glow transition-smooth">
                           <GraduationCap className="w-6 h-6 text-primary-foreground" />
                         </div>
                       </div>
 
-                      <h3 className="text-xl md:text-2xl font-bold mb-2">{edu.degree}</h3>
-                      <h4 className="text-lg text-primary mb-3">{edu.institution}</h4>
+                      <h3 className="text-xl md:text-2xl font-bold mb-2">
+                        {edu.degree}
+                      </h3>
+                      <h4 className="text-lg text-primary mb-3">
+                        {edu.institution}
+                      </h4>
 
                       <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
                         <div className="flex items-center">
@@ -120,16 +119,9 @@ const Education = () => {
                         </div>
                       </div>
 
-                      <p className="text-muted-foreground mb-4">{edu.description}</p>
-
-                      <div className="space-y-2">
-                        {edu.achievements.map((achievement) => (
-                          <div key={achievement} className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-secondary rounded-full mr-2 mt-2 flex-shrink-0" />
-                            <span className="text-sm text-muted-foreground">{achievement}</span>
-                          </div>
-                        ))}
-                      </div>
+                      <p className="text-muted-foreground mb-4">
+                        {edu.description}
+                      </p>
                     </motion.div>
                   </div>
                 </motion.div>
